@@ -1,0 +1,10 @@
+= link_to "/profiles/#{id}"
+  .col-4.text-normal
+    .creator-card.border-around.radius-5
+      .profile-img.bg-img-cover[style="background-image: url(#{asset_path "sample-photos/bg-sample-1.jpg"})" data-original="#{asset_path "sample-photos/profile-img-1.jpg"}"]
+        .profile-icon.avatar-image-lg.bg-img-cover.radius-100[style="background-image: url(#{asset_path "sample-photos/profile-img-1.jpg"})" data-original="#{asset_path "sample-photos/profile-img-1.jpg"}"]
+      .profile-details.col-10.col-center.text-center
+        .text-lg.strong.row-space-top-3.row-space-2
+          | #{name}
+        /.text-en.row-space-3
+          | #{Profile.find_by(user_id: id)[:description]}

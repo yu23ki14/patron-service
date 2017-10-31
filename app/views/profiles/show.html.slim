@@ -1,0 +1,21 @@
+.page-container
+  h2 Name: #{@user[:name]}
+  
+  h3 Profile
+  p #{@profile[:description]}
+  
+  .row-space-top-4
+    h3 Posts
+    - @posts.each do |p|
+      .row-space-top-3
+        h4 #{p[:title]}
+        p #{p[:content]}
+        - if p.image?
+          = image_tag p.image.thumb.url
+      h4 コメント
+      - Comment.where(post_id: p.id).each do |c|
+        .row-space-top-2
+        p #{User.find_by(id: c.user_id)[:name]}: #{c[:content]}
+      - if user_signed_in?
+        = render partial: "shared/form_for_comment", locals: {post: p}
+      hr

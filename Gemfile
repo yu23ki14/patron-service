@@ -26,6 +26,20 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+#use devise as user sign_up
+gem 'devise'
+
+#use carrierwave as image uploading
+gem 'carrierwave'
+
+#use fog as image uploading S3
+gem 'fog'
+
+#use rmagick as image processing
+gem 'rmagick'
+
+#use dotenv as sacurity
+gem 'dotenv-rails'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

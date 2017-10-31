@@ -1,4 +1,25 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  devise_scope :user do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+  end
+  
+  resources :profiles, :only => [:show] do
+    collection do
+      get 'edit'
+      get 'new'
+      post 'new' => 'profiles#create'
+      patch ':id' => 'profiles#update'
+    end
+  end
+  
+  post 'posts' => 'application#create_post'
+  
+  #投稿へのコメントフォームのルーティング
+  get 'comments' => 'application#new_comment'
+  post 'comments' => 'application#create_comment'
+  
   root 'welcome#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

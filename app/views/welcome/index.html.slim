@@ -1,2 +1,50 @@
-h1 Welcome#index
-p Find me in app/views/welcome/index.html.slim
+.col-12.col-center.first-view.bg-img-cover.p-x-0
+  .col-12.col-center.p-x-0
+    h1.m-t-0.text-contrast.text-center.text-shadow-gray CREATORS, COME GET PAID
+  .row-space-top-6
+    .col-center.text-center
+      = link_to "#", class: "button button-primary m-r-10"
+        | Become a Creator
+      = link_to "#", class: "button button-contrast m-l-10"
+        | Become a Patron
+.page-container.row-space-top-6
+  .text-lead-xl.text-center.row-space-5
+    | What is our service?
+  .row
+    .col-4
+      .text-lead-xl.text-center
+        | aaa
+      .col-9.col-center
+        .text-lead-en
+          | Fans pay you a subscription amount of their choice in exchange for exclusive experiences & behind-the-scenes content.
+    .col-4
+      .text-lead-xl.text-center
+        | aaa
+      .col-9.col-center
+        .text-lead-en
+          | Predictable income from your patrons means you can create on your terms. No strings attached.
+    .col-4
+      .text-lead-xl.text-center
+        | aaa
+      .col-9.col-center
+        .text-lead-en
+          | An average patron pays more on a monthly basis than consumers pay for Netflix, Spotify, or Amazon Prime.
+  hr.row-space-top-5.col-md-8.col-center
+
+.page-container.row-space-top-6
+  .text-lead-xl.text-center.row-space-5
+    | Trend Creators
+  .row
+    - @creators.each do |c|
+      = render partial: "shared/creator_card", locals:{name: c[:name], id: c[:id]}
+  hr.row-space-top-5.col-md-8.col-center
+
+- if user_signed_in?
+  .page-container.row-space-top-6
+    .text-lead-xl.text-center.row-space-5
+      | New Creators
+    .row
+      - @creators.each do |c|
+        = render partial: "shared/creator_card", locals:{name: c[:name], id: c[:id]}
+
+footer

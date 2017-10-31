@@ -4,6 +4,9 @@ html
     = render partial: 'layouts/meta_tags'
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
-    = csrf_meta_tags
+    //= csrf_meta_tags
 
   = yield
+  
+  - if user_signed_in?
+    = render partial: 'shared/form_for_post'

@@ -1,0 +1,13 @@
+= form_for Post.new do |p|
+  = p.hidden_field :user_id, :value => current_user.id
+  
+  = p.label :title
+  = p.text_field :title
+  
+  = p.label :content
+  = p.text_area :content
+  
+  = p.label :image
+  = p.file_field :image
+  
+  = p.submit "投稿"

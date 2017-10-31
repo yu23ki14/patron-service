@@ -1,0 +1,10 @@
+= form_for @profile do |p|
+  = p.hidden_field :user_id, :value => current_user.id
+  
+  = p.label :description
+  = p.text_area :description
+  
+  = p.label :genre
+  = p.text_field :genre
+  
+  = p.submit "更新"

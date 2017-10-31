@@ -1,0 +1,7 @@
+= form_for Comment.new do |p|
+  = p.hidden_field :user_id, :value => current_user.id
+  = p.hidden_field :post_id, :value => post.id
+  
+  = p.text_area :content
+  
+  = p.submit "投稿"
