@@ -1,13 +1,33 @@
 body
-  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif
+  font-family: "arial", "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif
   line-height: 1.44
-  color: $brand-dark-gray
+  color: $text-base
   background: $brand-white
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   
 footer
-  height: 20px
+  height: 100px
+  background-color: $brand-theme
+  
+/* backgroundcolor ======================================================*/
+.bg-dark-gray
+.bg-gray
+.bg-light-gray
+  background-color: $brand-gray
+.bg-white
+  background-color: $brand-white
+  
+/* header ===================================================*/
+.logo
+  font-size: 35px
+  line-height: 50px
+  margin-left: 30px
+  font-weight: bold
+  a
+    &:hover, &:focus
+    color: inherit !important
+    text-decoration: none !important
   
 /* responsible ================================================== */
   
@@ -55,11 +75,11 @@ h1, h2, h3, h4, h5, h6
   font-weight: 700
   
 a
-  color: $brand-theme
+  color: $text-base
   text-decoration: none
   &:hover, &:focus
-    color: $brand-theme-hover
-    text-decoration: underline
+    color: $text-base
+    text-decoration: none
 
 p
   word-break: break-word
@@ -83,6 +103,9 @@ label
 .text-center
   text-align: center
   
+.text-right
+  text-align: right
+  
 .text-y-center
   vertical-align: middle
   
@@ -99,19 +122,19 @@ label
   color: white
 
 h1, .h1
-  font-size: 45px
+  font-size: 32px
 h2, .h2
-  font-size: 30px
+  font-size: 26px
 h3, .h3
-  font-size: 25px
+  font-size: 23px
 h4, .h4
-  font-size: 20px
+  font-size: 21px
 h5, .h5
   font-size: 18px
 h6, .h6
-  font-size: 15px
+  font-size: 16px
 p
-  font-size: 12px 
+  font-size: 13px 
 
 @media (max-width: 767px)
   h1, .h1
@@ -416,6 +439,11 @@ input[type="radio"]:checked
 .row:after
   clear: both
   
+/* flexcontainer ==============================================*/
+.flex-container
+  display: flex
+  align-items: center
+  
 /* col ================================================== */
 
 .col-1,.col-sm-1,.col-md-1,.col-lg-1,.col-2,.col-sm-2,.col-md-2,.col-lg-2,.col-3,.col-sm-3,.col-md-3,.col-lg-3,.col-4,.col-sm-4,.col-md-4,.col-lg-4,.col-5,.col-sm-5,.col-md-5,.col-lg-5,.col-6,.col-sm-6,.col-md-6,.col-lg-6,.col-7,.col-sm-7,.col-md-7,.col-lg-7,.col-8,.col-sm-8,.col-md-8,.col-lg-8,.col-9,.col-sm-9,.col-md-9,.col-lg-9,.col-10,.col-sm-10,.col-md-10,.col-lg-10,.col-11,.col-sm-11,.col-md-11,.col-lg-11,.col-12,.col-sm-12,.col-md-12,.col-lg-12
@@ -439,6 +467,8 @@ input[type="radio"]:checked
   display: table-cell
   vertical-align: middle
 
+.col-0
+  float: left
 .col-offset-0
   margin-left: auto
 .col-push-0
@@ -979,12 +1009,12 @@ input[type="radio"]:checked
 
 .button
   display: inline-block
-  line-height: 40px
-  padding: 5px 22px
+  line-height: 35px
+  padding: 2px 22px
   color: $brand-gray
   font-size: 18px
   background-color: white
-  border-radius: 5px
+  border-radius: 2px
   border: 1px solid $brand-light-gray
   transition: background-color .2s
   cursor: pointer
@@ -1004,8 +1034,8 @@ input[type="radio"]:checked
   border-color: $brand-theme
   background-color: $brand-theme
   &:hover
-    background-color: $brand-theme-hover
-    border-color: $brand-theme-hover
+    border-color: $brand-theme
+    background-color: $brand-theme
 
 .button-primary-outline
   color: $brand-theme
@@ -1029,6 +1059,14 @@ input[type="radio"]:checked
     color: $brand-white
     background-color: $brand-contrast
     
+.button-blue
+  color: $brand-white
+  border-color: $brand-blue
+  background-color: $brand-blue
+  &:hover
+    border-color: $brand-blue
+    background-color: $brand-blue
+    
 /* background image ================================================== */
 
 .bg-img-cover
@@ -1050,7 +1088,9 @@ input[type="radio"]:checked
   display: inline-block
   vertical-align: middle
   border-radius: 100%
-  border: 3px solid $brand-theme
+.avatar-image-main
+  width: 150px
+  height: 150px
 .avatar-image-lg
   width: 64px
   height: 64px

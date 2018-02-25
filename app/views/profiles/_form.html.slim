@@ -1,4 +1,4 @@
-= form_for @profile do |p|
+= form_for Profile.new do |p|
   = p.hidden_field :user_id, :value => current_user.id
   
   = p.label :description

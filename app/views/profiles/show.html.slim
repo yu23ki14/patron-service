@@ -1,8 +1,77 @@
-.page-container
+.bg-light-gray.p-b-30
+  .page-container
+    .row.flex-container
+      .col-6
+        .row.flex-container
+          .col-0.m-r-10
+            = image_tag "sample-photos/sample.webp", class: "avatar-image avatar-image-main"
+          .col-0.m-l-10
+            h1.m-b-0 YONEYAMA
+            h5.m-t-0.m-b-0 DSLR VIDEO
+            h3 10 posts
+            h6.m-b-0
+              |サポーター数 
+              span.h2
+                |1,234 
+              |人
+            h6.m-t-0
+              |先月の支援額 
+              span.h2
+                |¥12,345
+      .col-6.text-right.row-space-top-6
+        = link_to "#", class: "button button-primary"
+          |サポーターになる
+        br
+        = link_to "#", class: "button button-blue row-space-top-1 row-space-2"
+          |シェア
+        br
+        ul.nav.row
+          li.active
+            = link_to "#"
+              h3.m-b-0 Portfolio
+          li
+            = link_to "#"
+              h3.m-b-0 Post
+          li
+            = link_to "#"
+              h3.m-b-0 Profile
+          li
+            = link_to "#"
+              h3.m-b-0 Community
+  
+  .page-container.bg-white.p-l-5.p-r-5
+    .row
+      .col-6.row-space-top-4
+        = link_to "#"
+          = image_tag "sample-photos/sample-v-1.webp", class: "col-12 col-center p-l-0 p-r-0"
+          h5.m-t-0 [MV] Hoorays「WhiteoutWeaps」
+      .col-6.row-space-top-4
+        = link_to "#"
+          = image_tag "sample-photos/sample-v-2.webp", class: "col-12 col-center p-l-0 p-r-0"
+          h5.m-t-0 「渡辺君」予告編
+      .col-6.row-space-top-4
+        = link_to "#"
+          = image_tag "sample-photos/sample-v-3.webp", class: "col-12 col-center p-l-0 p-r-0"
+          h5.m-t-0 オイモノガタリ
+      .col-6.row-space-top-4
+        = link_to "#"
+          = image_tag "sample-photos/sample-v-4.webp", class: "col-12 col-center p-l-0 p-r-0"
+          h5.m-t-0 【MV】白熊ピカソズー時代
+      .col-6.row-space-top-4
+        = link_to "#"
+          = image_tag "sample-photos/sample-v-5.webp", class: "col-12 col-center p-l-0 p-r-0"
+          h5.m-t-0 écrice
+      .col-6.row-space-top-4
+        = link_to "#"
+          = image_tag "sample-photos/sample-v-6.webp", class: "col-12 col-center p-l-0 p-r-0"
+          h5.m-t-0 pilotfly H1+ テストムービー
+
+//.page-container
   h2 Name: #{@user[:name]}
   
   h3 Profile
-  p #{@profile[:description]}
+  - if @profile[:description] != nil
+    p #{@profile[:description]}
   
   .row-space-top-4
     h3 Posts
